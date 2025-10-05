@@ -15,6 +15,8 @@ checksum=7687c3bbcff89ff331c5db72e0a5cce6bcae382e3c238d6f7019a6bc71d88e43
 
 build_options="systemd"
 
+build_options="systemd"
+
 libei-devel_package() {
 	depends="$(vopt_if systemd libsystemd-devel elogind-devel) ${sourcepkg}>=${version}_${revision}"
 	short_desc+=" - development files"
