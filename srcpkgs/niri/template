@@ -1,7 +1,7 @@
 # Template file for 'niri'
 pkgname=niri
 version=26.04
-revision=1
+revision=100		# bumped for repo
 build_style=cargo
 build_helper="qemu"
 configure_args="--no-default-features --features dbus,xdp-gnome-screencast"
@@ -38,6 +38,9 @@ post_install() {
 
 	vinstall resources/niri.desktop 644 usr/share/wayland-sessions
 	vinstall resources/niri-portals.conf 644 usr/share/xdg-desktop-portal
+        # systemd
+        vinstall resources/niri.service 644 usr/lib/systemd/user
+        vinstall resources/niri-shutdown.target 644 usr/lib/systemd/user
 
 	vsconf resources/default-config.kdl
 
